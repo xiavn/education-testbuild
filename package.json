@@ -1,0 +1,34 @@
+{
+  "name": "education-testbuild",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiavn/education-testbuild.git"
+  },
+  "keywords": [
+    "workflow"
+  ],
+  "author": "Lianne Turnbull",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiavn/education-testbuild/issues"
+  },
+  "homepage": "https://github.com/xiavn/education-testbuild#readme"
+}
