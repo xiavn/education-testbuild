@@ -1,9 +1,70 @@
+//Variables
+$san-juan: #385577;
+$cloud-burst: #223347;
+$san-marino: #4970a4;
+$white: #fff;
+
+//Box-Sizing
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	font-size: 16px;
+}
+
+ul {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	list-style-type: none;
+	margin: 0;
+}
+
+.container {
+	display: flex;
+	flex-flow: column;
+}
+
+//Top Nav Bar
+.main-nav {
+	background-color: $san-juan;
+	color: $white;
+	flex: 1 100%;
+	font-family: 'McLaren', cursive;
+	font-size: .875rem;
+	padding: 15px;
+	text-transform: uppercase;
+
+	ul {
+		padding: 0;
+
+		li {
+			line-height: 20px;
+			margin: 0 5px;
+			padding: 5px 10px;
+		}
+
+		.active {
+			background-color: $cloud-burst;
+			border-radius: 4px;
+		}
+	}
+}
+
+//Header
+header h1 {
+	color: $san-marino;
+	font-family: 'McLaren', cursive;
+	font-size: 1.875rem;
+	text-align: center;
+	text-transform: uppercase;
+	border: 1px solid red;
+	margin: 0 auto;
 }
