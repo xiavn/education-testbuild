@@ -7,7 +7,22 @@ html {
   box-sizing: inherit; }
 
 body {
+  font-family: 'McLaren', cursive;
   font-size: 16px; }
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+h1 {
+  font-size: 1.875rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  margin: 0 auto; }
 
 ul {
   display: -webkit-box;
@@ -31,9 +46,8 @@ ul {
   background-color: #385577;
   color: #fff;
   -webkit-box-flex: 1;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
-  font-family: 'McLaren', cursive;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   font-size: .875rem;
   padding: 15px;
   text-transform: uppercase; }
@@ -47,11 +61,101 @@ ul {
       background-color: #223347;
       border-radius: 4px; }
 
-header h1 {
-  color: #4970a4;
-  font-family: 'McLaren', cursive;
-  font-size: 1.875rem;
+header {
+  background: #97b143 url("../img/narrow-header.png") 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 414px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+@media (min-width: 775px) {
+  header {
+    background: #97b143 url("../img/medium-header.png"); } }
+
+@media (min-width: 1200px) {
+  header {
+    background: #97b143 url("../img/wide-header.png") 50%; } }
+
+.content-container {
+  width: 100%;
+  max-width: 960px;
+  padding: 50px 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; }
+
+.logo {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 0 16.666%;
+          flex: 2 0 16.666%;
   text-align: center;
-  text-transform: uppercase;
-  border: 1px solid red;
-  margin: 0 auto; }
+  padding: 2px; }
+
+.header-title {
+  margin: 0 auto;
+  -webkit-box-flex: 10;
+      -ms-flex: 10 0 83.333%;
+          flex: 10 0 83.333%;
+  color: #4970a4; }
+  .header-title h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    opacity: .7; }
+
+.welcome {
+  background-color: #97b143;
+  color: #fff; }
+
+.welcome-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%; }
+  .welcome-text p {
+    font-family: 'Open Sans', sans-serif;
+    opacity: .75; }
+  .welcome-text button {
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 3.375rem;
+    padding: 0 80px 0 20px;
+    text-transform: uppercase;
+    background-color: #fed411;
+    border: none;
+    position: relative;
+    box-shadow: 4px 4px 4px 0 rgba(2, 3, 3, 0.2); }
+    .welcome-text button span {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 54px;
+      height: 54px;
+      background-color: rgba(175, 34, 34, 0.1);
+      text-align: center;
+      padding: 6px; }
+
+.welcome-slideshow {
+  display: none;
+  -ms-flex-item-align: center;
+      align-self: center; }
+  .welcome-slideshow img {
+    min-height: 300px;
+    min-width: 300px;
+    margin: 0 auto;
+    border: 8px solid rgba(2, 3, 3, 0.2);
+    border-radius: 50%; }
+
+@media (min-width: 768px) {
+  .welcome-text {
+    -webkit-box-flex: 7;
+        -ms-flex: 7 1 58.333%;
+            flex: 7 1 58.333%; }
+  .welcome-slideshow {
+    display: inherit;
+    -webkit-box-flex: 5;
+        -ms-flex: 5 0 41.666%;
+            flex: 5 0 41.666%; } }
