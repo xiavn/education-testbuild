@@ -167,6 +167,12 @@ header {
       -ms-flex-align: center;
               -ms-grid-row-align: center;
           align-items: center; }
+  .tabbed-content:after {
+    content: "";
+    background-image: url("../img/scallop.png");
+    height: 34px;
+    display: block;
+    width: 100%; }
   .tabbed-content nav {
     background-color: #97b143;
     -webkit-box-flex: 1;
@@ -235,14 +241,12 @@ header {
   display: inherit;
   -webkit-box-flex: 5;
       -ms-flex: 5 0 41.666%;
-          flex: 5 0 41.666%;
-  -ms-flex-item-align: center;
-      align-self: center; }
+          flex: 5 0 41.666%; }
   .news-photo img {
     width: 240px;
     height: 240px;
     border-radius: 50%;
-    border: 8px solid rgba(2, 3, 3, 0.08);
+    border: 8px solid rgba(68, 68, 68, 0.08);
     float: left;
     margin: 0 auto; }
 
@@ -250,4 +254,33 @@ header {
   -webkit-box-flex: 7;
       -ms-flex: 7 1 58.333%;
           flex: 7 1 58.333%;
-  border: 1px solid red; }
+  padding: 10px; }
+  .latest-news h2 {
+    font-size: 1.5rem;
+    margin: 0; }
+  .latest-news .date, .latest-news p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: .875rem;
+    color: #444;
+    opacity: .34; }
+  .latest-news p {
+    opacity: 1; }
+  .latest-news .read-more {
+    text-transform: uppercase;
+    color: #d03c3c; }
+
+#latest-news {
+  display: none; }
+
+#events {
+  display: none; }
+
+#latest-photos {
+  display: none; }
+
+#newsletters {
+  display: none; }
+
+.map {
+  background-color: #5c9edc; }
