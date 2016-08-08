@@ -11,6 +11,7 @@ $mexican-red: #af2222;
 $persian-red: #d03c3c;
 	//Other
 $white: #fff;
+$wild-sand: #f6f6f6;
 $woodsmoke: #020303;
 $tundora: #444;
 $candlelight: #fed411;
@@ -229,6 +230,7 @@ header {
 			display: none;
 			margin: 0 2px;
 			position: relative;
+			cursor: pointer;
 		}
 
 		li:first-child {
@@ -329,20 +331,87 @@ header {
 	}
 }
 
-#latest-news {
-	display: none;
+.event {
+	flex: 1 1 100%;
+	margin: 20px 0;
+	padding: 0 40px;
+
+	h3 {
+		margin: 10px 0;
+		font-size: 1.125rem;
+	}
+
+	p {
+		margin: 5px 0;
+		font-family: 'Open Sans', sans-serif; 
+	}
+
+	.date-box {
+		background-color: $wild-sand;
+		width: 80px;
+		height: 80px;
+		margin: 0 20px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: bold;
+		text-align: center;
+		float: left;
+
+		.month {
+			background-color: $persian-red;
+			height: 30px;
+			color: $white;
+			text-align: center;
+			line-height: 30px;
+			text-transform: uppercase;
+			border-top-left-radius: 8px;
+			border-top-right-radius: 8px;
+		}
+
+		.day {
+			font-size: 2rem;
+			height: 50px;
+			line-height: 50px;
+		}
+	}
 }
 
-#events {
-	display: none;
+@media (min-width: 768px) { 
+	.event {
+		flex: 1 1 50%;
+		padding: 0 20px;
+	}
 }
 
-#latest-photos {
-	display: none;
+@media (min-width: 1200px) { 
+	.event {
+		flex: 1 1 33.333%;
+		padding: 0 10px;
+	}
 }
 
-#newsletters {
-	display: none;
+.photo-slider {
+	flex: 1 1 auto;
+	max-width: 80%;
+	margin: 0 auto;
+	ul {
+		margin: 0 auto;
+		padding: 0;
+
+		li {
+			margin: 10px;
+
+			img {
+				border-radius: 50%;
+				height: 200px;
+				width: 200px;
+			}
+		}
+	}
+}
+
+.arrow-slider {
+	flex: 0 0 40px;
+	align-self: center;
 }
 
 //Map

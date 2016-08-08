@@ -72,6 +72,51 @@ var tabbedContent = {
 			}
 			return html;
 		}
+	},
+	"latestPhotos": {
+		"photos": [
+			{
+				"photo": "l-photo1.jpg",
+				"alt": "School Reading Time"
+			},
+			{
+				"photo": "l-photo2.jpg",
+				"alt": "Activity Time"
+			},
+			{
+				"photo": "l-photo3.jpg",
+				"alt": "Arts & Crafts"
+			}
+		],
+		"generateSlider": function(photo) {
+			var img = '<li><img src="../img/' + photo.photo + 
+			'" alt="' + photo.alt + '"></li>';
+			return img;
+		},
+		"html": function() {
+			var slider = "";
+			for (var i=0; i<this.photos.length; i++) {
+				slider += this.generateSlider(this.photos[i]);
+			}
+			var html = '<div class="arrow-slider"><img class="arrow-slider" id="arrow-left" src="../img/arrow-left-slider.png"></div><div class="photo-slider"><ul>' + slider + '</ul></div><div class="arrow-slider"><img id="arrow-right" src="../img/arrow-right-slider.png"></div>';
+			return html;
+		}
+	},
+	"newsletters": {
+		"header": "Year 3 Science Museum Adventure!",
+		"date": "12/04/2014",
+		"text": "Miss Smith and Mrs Weston's Year 3 classes had great fun at the Science Museum this week. Their trip was to support the Amazing Bodies portion of their curriculum this year, and they made lots of amazing discoveries...",
+		"photo": "../img/news-photo.jpg",
+		"html": function() {
+			var img = '<aside class="news-photo"><img src="' + this.photo + '" alt="Photo of the Science Museum"></aside>',
+				article = '<article class="latest-news"><h2>' + 
+				this.header + 
+				'</h2><span class="date">' + this.date + '</span><p>' + 
+				this.text + 
+				'</p><a class="read-more">Read More...</a></article>',
+				html = img + article;
+			return html;
+		}
 	}
 };
 
