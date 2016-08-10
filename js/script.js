@@ -10,7 +10,7 @@ var tabbedContent = {
 				this.header + 
 				'</h2><span class="date">' + this.date + '</span><p>' + 
 				this.text + 
-				'</p><a class="read-more">Read More...</a></article>',
+				'</p><a class="read-more" href="#">Read More...</a></article>',
 				html = img + article;
 			return html;
 		}
@@ -158,8 +158,8 @@ function tabbedMenuSelect(item) {
 
 $(document).ready(function() {
 	generateTabbedContent(tabbedContent.latestNews);
-	$("#tabbed-nav ul li").click(function() {
-		if ($(".tabbed-content nav ul").css("flex-flow") === "column nowrap") {
+	$("#tabbed-nav ul li").on("click", function() {
+		if ($(".tabbed-content nav ul").css("width") !== "100%") {
 			tabbedMenuSelect($(this));
 			$(".tab-menu-item").toggleClass("menu-hide");
 			$(".menu-small").remove();

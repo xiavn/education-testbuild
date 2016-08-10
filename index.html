@@ -47,7 +47,7 @@
 					<p>
 						Nulla faucibus vitae lorem sed auctor. Aliquam vitae imperdiet nibh. Suspendisse fringilla est quis leo auctor porttitor. Proin consequat mauris at est tempor, eu sollicitudin lacus tincidunt. Curabitur non dolor porta, fermentum diam sit amet, tempus augue. Phasellus egestas vulputate ex, vel ullamcorper lorem. Praesent eu erat in orci imperdiet faucibus vel eu eros. Cras elementum felis a faucibus pulvinar. Nunc velit tortor, malesuada facilisis eleifend eget, tempor quis turpis. Donec lobortis ipsum vel volutpat bibendum. Donec eu erat sed augue condimentum pellentesque sed nec mi. Donec tempus scelerisque tempus. Cras mattis pharetra rutrum.
 					</p>
-					<button>View Full Welcome <span><img src="img/arrow-right.png" alt="Right Arrow"></span></button>
+					<button class="read-welcome">View Full Welcome <span><img src="img/arrow-right.png" alt="Right Arrow"></span></button>
 				</article>
 				<aside class="welcome-slideshow">
 					<img class="slideshow" alt="Slideshow Of Children" src="img/slideshow1.jpg">
@@ -67,39 +67,105 @@
 			</div>
 		</section>
 		<section class="map">
-			<div class="map-container">
-				<h3>Find Us Here!</h3>
-				<p>
-					27/29 Commerce Road<br>
-					Lynch Wood<br>
-					Peterborough<br>
-					PE2 6LR<br>
-				</p>
-				<span class="contact">P: 0845 257 0224</span>
-				<span class="contact">E: hello@e4education.co.uk</span>
+			<div class="content-container">
+				<div class="map-container">
+					<div class="map-img">
+						<div id="map">
+						</div>
+						<div class="address">
+							<h3>Find Us Here</h3>
+							<p>
+								27/29 Commerce Road<br>
+								Lynch Wood<br>
+								Peterborough<br>
+								PE2 6LR<br>
+							</p>
+							<p><span class="contact">P:</span>0845 257 0224</p>
+							<p><span class="contact">E:</span><a href="mailto:hello@e4education.co.uk">hello@e4education.co.uk<a></p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 		<footer>
 			<ul class="logos">
-				<li><img></li>
-				<li><img></li>
-				<li><img></li>
+				<li><img src="img/arts.png" alt="Arts Council England"></li>
+				<li><img src="img/healthy.png" alt="Healthy School"></li>
+				<li><img src="img/investors.png" alt="Investor In People"></li>
 			</ul>
-			<ul class="footer-links">
-				<li>Sitemap</li>
-				<li>High Visibility Version</li>
-			</ul>
-			<p>
-				Content Copyright © 2014 Your School
-				<br>
-				School Website Design by E4Education
-			</p>
+			<div class="footer-text">
+				<ul class="footer-links">
+					<li>Sitemap</li>
+					<li><a href="#">High Visibility Version</a></li>
+				</ul>
+				<p>
+					Content Copyright © 2014 Your School
+					<br>
+					School Website Design by E4Education
+				</p>
+			</div>
 		</footer>
 	</div>
-
 	<script src="js/query.min.js"></script>
 	<script src="js/script.js"></script>
+	<script>
+      function initMap() {
+        var mapDiv = document.getElementById('map'),
+        		myLatLng = {lat: 52.5510726, lng: -0.3211883},
+        		map = new google.maps.Map(mapDiv, {
+            center: myLatLng,
+            zoom: 14,
+            styles: [
+						  {
+						    "featureType": "landscape.natural",
+						    "stylers": [
+						      { "color": "#e9eaea" }
+						    ]
+						  },{
+						    "featureType": "road.highway",
+						    "elementType": "geometry",
+						    "stylers": [
+						      { "color": "#c5c8cf" }
+						    ]
+						  },{
+						    "featureType": "road.local",
+						    "elementType": "geometry",
+						    "stylers": [
+						      { "color": "#b8c9d3" }
+						    ]
+						  },{
+						  },{
+						    "featureType": "road.arterial",
+						    "elementType": "geometry",
+						    "stylers": [
+						      { "color": "#90abd0" }
+						    ]
+						  },{
+						    "featureType": "water",
+						    "elementType": "geometry",
+						    "stylers": [
+						      { "color": "#99c9e3" }
+						    ]
+						  },{
+						    "featureType": "poi",
+						    "elementType": "geometry",
+						    "stylers": [
+						      { "color": "#f0f0f0" }
+						    ]
+						  }
+						]
+        });
+        var marker = new google.maps.Marker({
+			    position: myLatLng,
+			    map: map,
+			    title: 'Your School!',
+			    icon: "img/pin.png"
+			  });
+      }
+   </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmM2BqLXR6KReRt2FL_KEI0IX5ASdf-C8&callback=initMap"
+  async defer>
+	</script>
 </body>
 
 </html>

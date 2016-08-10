@@ -4,6 +4,7 @@ $san-juan: #385577;
 $cloud-burst: #223347;
 $san-marino: #4970a4;
 $havelock-blue: #5c9edc;
+$malibu: #84c4ff;
 	//Greens
 $sushi: #97b143;
 	//Reds
@@ -148,12 +149,13 @@ header {
 		color: $white;
 		font-size: 1.25rem;
 		line-height: 3.375rem;
-		padding: 0 80px 0 20px;
+		padding: 0 15px;
 		text-transform: uppercase;
 		background-color: $candlelight;
 		border: none;
 		position: relative;
 		box-shadow: 4px 4px 4px 0 rgba($woodsmoke, .2);
+
 
 		span {
 			position: absolute;
@@ -164,6 +166,7 @@ header {
 			background-color: rgba($mexican-red, .1);
 			text-align: center;
 			padding: 6px;
+			display: none;
 		}
 	}
 }
@@ -181,6 +184,28 @@ header {
 	}
 }
 
+.read-welcome {
+	cursor: pointer;
+
+	&:hover,
+	active,
+	focus {
+		top: 2px;
+		box-shadow: 2px 2px 4px 0 rgba($woodsmoke, .2);
+	}
+}
+
+@media (min-width: 400px) { 
+	.welcome-text {
+		button {
+			padding: 0 80px 0 20px;
+			span {
+				display: inherit;
+			}
+		}
+	}
+}
+
 @media (min-width: 768px) { 
 	.welcome-text {
 		flex: 7 1 58.333%;
@@ -193,6 +218,17 @@ header {
 }
 
 //Tabbed Content
+
+a {
+	text-decoration: none;
+	color: $persian-red;
+
+	&:hover, 
+		active, 
+		focus {
+			text-decoration: underline;
+	}
+}
 
 .tabbed-content {
 	flex-flow: column;
@@ -208,17 +244,17 @@ header {
 
 	nav {
 		background-color: $sushi;
-		flex: 1 1 100%;
+		flex: 1 1 auto;
 		width: 100%;
 		position: relative;
 
 		ul {
 			max-width: 960px;
-			width: 50%;
+			min-width: 70%;
 			margin: 0 auto;
 			padding: 0;
 			display: flex;
-			flex-flow: column;
+			flex-flow: column nowrap;
 			justify-content: space-between;
 			position: absolute;
 			top: -60px;
@@ -234,7 +270,7 @@ header {
 			text-transform: uppercase;
 			font-size: 1rem;
 			line-height: 2.5rem;
-			padding: 10px 30px;
+			padding: 10px 20px;
 			position: relative;
 			order: 2;
 			cursor: pointer;
@@ -386,7 +422,6 @@ header {
 
 	.read-more {
 		text-transform: uppercase;
-		color: $persian-red;
 	}
 }
 
@@ -506,6 +541,7 @@ header {
 	margin: 20px;
 	width: 40px;
 	height: 40px;
+	cursor: pointer;
 }
 
 .news-item {
@@ -518,17 +554,9 @@ header {
 	}
 
 	a {
-		text-decoration: none;
-		color: $persian-red;
 		font-family: 'Open Sans', sans-serif;
 		font-weight: bold;
 		margin: 5px 0;
-
-		&:hover, 
-		active, 
-		focus {
-			text-decoration: underline;
-		}
 	}
 }
 
@@ -547,4 +575,263 @@ header {
 
 .map {
 	background-color: $havelock-blue;
+	flex-flow: column;
+	align-items: center;
+
+	&:after {
+		content: "";
+		background-image: url('../img/scallop2.png');
+		height: 31px;
+		display: block;
+		width: 100%;
+	}
 }
+
+.map-container {
+	background-color: $persian-red;
+	background: repeating-linear-gradient(
+			0deg, 
+			$white, 
+			$white 36px, 
+			$persian-red 36px, 
+			$persian-red 72px
+		);
+	position: relative;
+	padding: 0 5px;
+	max-width: 252px;
+	min-width: 252px;
+	max-height: 396px;
+	min-height: 396px;
+	margin: 0 auto;
+
+	&:before,
+	&:after {
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 5px;
+		content: "";
+		background: repeating-linear-gradient(
+			90deg, 
+			$white, 
+			$white 36px, 
+			$persian-red 36px, 
+			$persian-red 72px
+		);
+	}
+
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		bottom: 0;
+	}
+}
+
+.map-img {
+	background-color: $white;
+}
+
+.address {
+	background-color: $white;
+	margin: 0;
+	padding: 0 10px;
+	width: 242px;
+	z-index: 1;
+	position: absolute;
+	top: 180px;
+	left: 5px;
+
+	h3 {
+		margin: 15px 0;
+		color: $havelock-blue;
+		text-transform: uppercase;
+		font-size: 1.25rem;
+		text-align: center;
+		font-weight: normal;
+	}
+
+	p {
+		margin: 10px 0;
+		font-family: 'Open Sans', sans-serif;
+		font-size: .875rem;
+	}
+
+	span {
+		margin: 0 10px 0 0;
+	}
+}
+
+#map {
+	position: absolute;
+	top: 5px;
+	height: 180px;
+	width: 242px;
+	z-index: 0;
+}
+
+@media (min-width: 420px) { 
+	.address {
+		top: 50%;
+		transform: translateY(-50%);
+		margin: 0 20px;
+		padding: 0 10px;
+		width: auto;
+		background-color: rgba($white, .4);
+
+		h3 {
+			margin: 15px 0;
+		}
+
+		p {
+			margin: 10px 0;
+		}
+
+		span {
+			margin: 0 10px 0 0;
+		}
+	}
+
+	.map-container {
+		max-width: 396px;
+		min-width: 396px;
+		max-height: 324px;
+		min-height: 324px;
+	}
+
+	#map {
+		height: 314px;
+		width: 386px;
+	}
+}
+
+@media (min-width: 700px) { 
+	.address {
+		top: 50%;
+		transform: translateY(-50%);
+		margin: 0 20px;
+		padding: 15px 40px 15px 20px;
+
+		h3 {
+			margin: 15px 0;
+		}
+
+		p {
+			margin: 10px 0;
+		}
+
+		span {
+			margin: 0 10px 0 0;
+		}
+	}
+
+	.map-container {
+		max-width: 684px;
+		min-width: 684px;
+		max-height: 324px;
+		min-height: 324px;
+	}
+
+	#map {
+		height: 314px;
+		width: 674px;
+	}
+}
+
+@media (min-width: 1000px) { 
+	.address {
+		top: 50%;
+		transform: translateY(-50%);
+		margin: 0 20px;
+
+		h3 {
+			margin: 15px 0;
+		}
+
+		p {
+			margin: 10px 0;
+		}
+
+		span {
+			margin: 0 10px 0 0;
+		}
+	}
+
+	.map-container {
+		max-width: 900px;
+		min-width: 900px;
+		max-height: 324px;
+		min-height: 324px;
+	}
+
+	#map {
+		height: 314px;
+		width: 890px;
+	}
+}
+
+//Footer
+footer {
+	background-color: $malibu;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 40px 20px 10px
+}
+
+.logos {
+	flex: 1 1 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+
+	li {
+		flex: 1 1 33.333%;
+		text-align: center;
+	}
+}
+
+.footer-text {
+	flex: 1 1 100%;
+	color: $white;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: .875rem;
+	text-transform: uppercase;
+
+	a {
+		color: $san-marino;
+	}
+}
+
+.footer-links {
+	
+	li:not(:last-child):after {
+		content: "|";
+		margin: 5px;
+	}
+}
+
+@media (min-width: 900px) {
+	.logos {
+		flex: 1 1 50%;
+	}
+
+	.footer-text {
+		flex: 1 1 50%;
+	}
+
+	.footer-text {
+		text-align: right;
+		align-items: flex-end;
+	}
+}
+
+
