@@ -53,10 +53,18 @@ ul {
   text-transform: uppercase; }
   .main-nav ul {
     padding: 0; }
+    .main-nav ul a {
+      color: #fff;
+      text-decoration: none; }
     .main-nav ul li {
       line-height: 20px;
       margin: 0 5px;
       padding: 5px 10px; }
+    .main-nav ul li:hover,
+    .main-nav ul li:active,
+    .main-nav ul li:focus {
+      background-color: rgba(34, 51, 71, 0.5);
+      border-radius: 4px; }
     .main-nav ul .active {
       background-color: #223347;
       border-radius: 4px; }
