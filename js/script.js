@@ -156,8 +156,17 @@ function tabbedMenuSelect(item) {
 	generateTabbedContent(tabbedContent[tab]);
 }
 
+function welcomeSlideshow() {
+	var active = $(".welcome-slideshow ul li.active"),
+		next = active.next().length === 0 ? $(".welcome-slideshow ul li:first") : active.next();
+
+	active.removeClass("active");
+	next.addClass("active");
+}
+
 $(document).ready(function() {
 	generateTabbedContent(tabbedContent.latestNews);
+	setInterval("welcomeSlideshow()", 5000);
 	$("#tabbed-nav ul li").on("click", function() {
 		if ($(".tabbed-content nav ul").css("width") !== "100%") {
 			tabbedMenuSelect($(this));

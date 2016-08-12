@@ -152,9 +152,24 @@ header {
   display: none;
   -ms-flex-item-align: center;
       align-self: center; }
+  .welcome-slideshow ul {
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    width: 300px;
+    height: 300px; }
+    .welcome-slideshow ul li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-transition: opacity 1.5s ease-in-out;
+      transition: opacity 1.5s ease-in-out; }
+    .welcome-slideshow ul .active {
+      opacity: 1; }
   .welcome-slideshow img {
-    min-height: 300px;
-    min-width: 300px;
+    height: 300px;
+    width: 300px;
     margin: 0 auto;
     border: 8px solid rgba(2, 3, 3, 0.2);
     border-radius: 50%; }
